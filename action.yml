@@ -1,0 +1,27 @@
+name: 'The name of your action here'
+description: 'Provide a description here'
+author: 'Your name or organization here'
+
+# Add your action's branding here. This will appear on the GitHub Marketplace.
+branding:
+  icon: 'heart'
+  color: 'red'
+
+# Define your inputs here.
+inputs:
+  token:
+    description: >
+      Access token for the GitHub API. Required to fetch the tags and commits in
+      order to calculate the version number
+    required: true
+    default: ${{ github.token }}
+
+# Define your outputs here.
+outputs:
+  version:
+    description: >
+      Version determined by this action
+
+runs:
+  using: node20
+  main: dist/index.js
